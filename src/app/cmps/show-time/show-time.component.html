@@ -1,0 +1,7 @@
+<p>show-time </p>
+<div [ngClass]="classMode" (click)="toggleMode()">
+    <div class="img">
+      <img [src]="getSeason()" alt="season" />
+    </div>
+    <h2>{{timeToDisplay}}</h2>
+  </div>

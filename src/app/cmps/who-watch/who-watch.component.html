@@ -1,0 +1,27 @@
+<section>
+    <h2>Who Watch</h2>
+
+    <button class='add-btn' (click)="onAddUser()">Add User</button>
+    <ng-container *ngIf="!currUser">
+      <ul class="user-list">
+        <li *ngFor="let user of users trackBy: trackByUserId" (click)="currUser = user">
+          {{ user.name }}
+          <div><button (click)="currUser = user"><img class="avatar-img" src="../../../assets/img/avatar.jpeg" ></button></div>
+          <button class="delete-btn" (click)="onRemoveUser(user.id)">Delete User</button>
+
+        </li>
+      </ul>
+    </ng-container>
+  
+    <ng-container *ngIf="currUser">
+      <div>{{ currUser.name }}</div>
+      <div>TV shows:</div>
+      <ul>
+        <li *ngFor="let tvShow of currUser.tvShows">
+          {{ tvShow }}
+        </li>
+      </ul>
+      <button class="back-btn" (click)="currUser = null">Back</button>
+    </ng-container>
+  </section>
+  

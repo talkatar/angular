@@ -1,0 +1,9 @@
+<section>
+    <h1>COUNTDOWN</h1>
+    <div >
+      {{ formatTimeInMins(timeRemaining) }}
+      <span [class]="counterClass()">
+        {{ formatTimeInSec(timeRemaining) }}
+      </span>
+    </div>
+  </section>
